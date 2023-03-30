@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À Propos | Xclusivity Club" description="À Propos de nous">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos de nous"
+				tagline="Nous sommes ravis de voir votre intérêt pour notre firme et nous souhaitons partager avec vous notre histoire et nos valeurs afin de vous permettre de comprendre nos motivations"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Notre Histoire</h2>
+				<div class="content">
+					<p>
+						Dans notre agence de marketing, nous croyons que la <a>créativité</a> est au cœur de chaque campagne réussie. Notre équipe se consacre à élaborer des stratégies uniques et captivantes qui capturent l'essence de votre marque et se connectent avec votre public.
+					</p> <br>
+					<p>
+						Nous comprenons que, en tant que créateur de contenu, la croissance de vos revenus est essentielle à votre succès. 
+						C'est pourquoi nous avons fait de notre mission de vous aider à obtenir des résultats incroyables. 
+						Nous sommes spécialisés dans le travail avec des créateurs de contenu comme vous, et nous avons vu de première main l'impact qu'une campagne 
+						de marketing bien exécutée peut avoir sur votre entreprise.
+					</p> <br>
+					<p>
+						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
+						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
+						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
+						pretium fusce.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Notre Histoire</h2>
+				<div class="content">
+					<p>Notre histoire commence avec un groupe de marketeurs passionnés qui ont reconnu le besoin d'une agence spécialisée dédiée aux créateurs de contenu. Nous avons vu un vide sur le marché et avons décidé de le remplir. Nous voulions créer une agence de marketing adaptée aux besoins uniques des créateurs de contenu, une agence qui pourrait les aider à augmenter leurs revenus et à atteindre leurs objectifs.
+					</p>
+					<p> <br>
+						</p>Au fil des ans, nous avons travaillé avec des centaines de créateurs de contenu, les aidant à élaborer et à exécuter des stratégies de marketing qui ont propulsé leur entreprise au niveau supérieur. 
+						Nous avons vu l'impact incroyable que notre travail peut avoir sur une entreprise, et nous sommes engagés à continuer à offrir des résultats exceptionnels pour nos clients.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Nos Valeurs</h2>
+				<div class="content">
+					<p>Dans notre agence de marketing, nous valorisons la créativité et l'innovation avant tout. 
+						Nous cherchons toujours des moyens nouveaux et excitants de nous connecter avec votre public et de raconter votre histoire. 
+						Nous croyons que les meilleures campagnes sont celles qui sont vraiment uniques, et nous nous efforçons de livrer ce niveau de créativité dans tout ce que nous faisons.
+					</p> <br>
+					<p>
+						En conclusion, nous sommes une agence de marketing qui comprend les besoins uniques des créateurs de contenu. 
+						Nous sommes engagés à offrir des résultats exceptionnels qui vous aident à développer votre entreprise et à atteindre vos objectifs. 
+						Si vous recherchez une équipe qui valorise la créativité et l'innovation, ne cherchez pas plus loin que nous. 
+						Nous sommes là pour vous aider à raconter votre histoire et à vous connecter avec votre public de manière significative.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
